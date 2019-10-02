@@ -1,4 +1,4 @@
-# Find_The_Maze_Path
+# Robot In The Grid
 
 This code takes a 2D maze and finds the coodinates of the path from start to end
 

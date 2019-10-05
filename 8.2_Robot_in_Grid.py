@@ -56,21 +56,14 @@ def get_path(maze):
         return [path, failed_path]
     return [None, None]
 
-'''
-
-'''
-
 maze = [[1,2,3], [4,5,6], [7,8,9]]
 output_path, failed_path = get_path(maze) #1, 4, 7, 8, 9
-
 print("Path from Top left to Bottom right")
 print(output_path)
 print("Blocked points")
 print(failed_path) 
 
 maze = [[1,2,3], [0,5,6], [7,8,9]] 
-print("----------")
-
 output_path, failed_path = get_path(maze) #1, 2, 5, 8, 9
 print("Path from Top left to Bottom right")
 print(output_path)
@@ -78,7 +71,6 @@ print("Blocked points")
 print(failed_path) 
 
 maze = [[1,2,3], [0,5,6], [7,0,9]]
-print("----------")
 output_path, failed_path = get_path(maze) #1, 2, 5, 6, 9
 print("Path from Top left to Bottom right")
 print(output_path)
@@ -86,14 +78,8 @@ print("Blocked points")
 print(failed_path) 
 
 maze = [[1,2,3,4], [5,6,0,8], [0,0,11,12], [13,14,15,16]]
-print("----------")
 output_path, failed_path = get_path(maze) #1, 5, 6, 2, 3, 4, 8, 12, 16
 print("Path from Top left to Bottom right")
 print(output_path)
 print("Blocked points")
 print(failed_path) #5,6 are blocked
-
-
-
-
-

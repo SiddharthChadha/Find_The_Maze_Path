@@ -13,14 +13,19 @@ Approach:
     - Checking if a path exists to down or to the right would be recrursive call as for checking if there is a path existing from 1 to 9,
     you check if there is a path existing from 4 to 9 or 2 to 9 and so on. 
     - Base case would be the case where our algorithm is checking if a path exists from 9 to 9. This returns TRUE
-
     - Time Complexity: Worst case(2^(r+c)), Space Complexity: O(r+c)
 
 Memoisation:
     - Save failed paths in hashset
     - No need to compute them again
     - Time Complexity: O(rc)
-
+    
+Example: 
+    1   2   3   
+    4   5   6
+    7   8   9
+    Output: 9, 8, 7, 4, 1
+    0 means path is blocked
 '''
 
 def find_path(maze, row, col, path, failed_path): #Finds path from row, col to the end
@@ -33,14 +38,11 @@ def find_path(maze, row, col, path, failed_path): #Finds path from row, col to t
         return False
     is_destination = True if (row == len(maze) - 1 and col == len(maze[0]) - 1) else False
 
-    print("Maze[row][col] ", maze[row][col])
-
     if(is_destination or find_path(maze, row+1, col, path, failed_path) or find_path(maze, row, col+1, path, failed_path)):
         path.append([row, col])
         return True
 
     failed_path.add(pt)
-    #print("pt ", pt)
     return False
     
 def get_path(maze):
@@ -55,10 +57,7 @@ def get_path(maze):
     return [None, None]
 
 '''
-0 means path is blocked
-1   2   3
-4   5   6
-7   8   9
+
 '''
 
 maze = [[1,2,3], [4,5,6], [7,8,9]]
